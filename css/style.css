@@ -1,0 +1,196 @@
+/* ===== GENERAL PAGE ===== */
+
+body{
+background:#f1f8e9;
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-brand{
+font-weight:bold;
+font-size:20px;
+}
+
+.nav-link{
+font-weight:500;
+}
+
+.nav-link:hover{
+color:#dcedc8 !important;
+}
+
+/* ===== HERO SECTION (YOUR EXISTING BANNER) ===== */
+
+.hero{
+height:500px;
+background:url('../images/ayurveda_banner.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:48px;
+font-weight:bold;
+text-shadow:2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.hero p{
+font-size:20px;
+}
+
+/* ===== DASHBOARD HERO (AFTER LOGIN) ===== */
+
+.hero-section{
+background:linear-gradient(135deg,#6b4b3e,#4e342e);
+padding:80px 20px;
+color:white;
+text-align:center;
+border-bottom-left-radius:40px;
+border-bottom-right-radius:40px;
+}
+
+.hero-section h1{
+font-weight:700;
+font-size:40px;
+}
+
+.hero-section p{
+font-size:18px;
+opacity:0.9;
+}
+
+/* ===== CARDS ===== */
+
+.card{
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border:none;
+transition:all 0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+/* ===== DASHBOARD CARDS ===== */
+
+.dashboard-card{
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+text-align:center;
+background:white;
+transition:0.3s;
+}
+
+.dashboard-card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+.dashboard-card h4{
+margin-bottom:15px;
+font-weight:600;
+}
+
+.dashboard-card p{
+color:#666;
+}
+
+.dashboard-card .btn{
+width:100%;
+margin-top:10px;
+}
+
+/* ===== DISEASE CARDS ===== */
+
+.disease-card{
+padding:20px;
+border-radius:12px;
+background:white;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.disease-card h3{
+color:#2e7d32;
+}
+
+.disease-card .btn{
+width:100%;
+margin-top:15px;
+}
+
+/* ===== IMAGES ===== */
+
+img{
+max-width:100%;
+border-radius:10px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+margin-top:50px;
+padding:20px;
+text-align:center;
+background:#2e7d32;
+color:white;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-success{
+background:#2e7d32;
+border:none;
+transition:0.3s;
+}
+
+.btn-success:hover{
+background:#1b5e20;
+transform:scale(1.05);
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+h3{
+color:#2e7d32;
+font-weight:600;
+}
+
+h4{
+color:#2e7d32;
+}
+.disease-img{
+    max-width:250px;
+    max-height:200px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:10px;
+    display:block;
+    margin:auto;
+}
