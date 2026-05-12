@@ -13,10 +13,20 @@ if(mysqli_num_rows($result) == 1){
     $user = mysqli_fetch_assoc($result);
     
     // Verify password
+    // if(password_verify($_POST['password'], $user['password'])){
+    //     $_SESSION['user'] = $user['email'];
+    //     header("Location: index.php");
+    //     exit;
     if(password_verify($_POST['password'], $user['password'])){
-        $_SESSION['user'] = $user['email'];
-        header("Location: index.php");
-        exit;
+    $_SESSION['user'] = $user['email'];
+
+    // ✅ Add this line
+    $_SESSION['show_profile_popup'] = true;
+
+    header("Location: index.php");
+    exit;
+
+
     } else {
         $error = "Invalid email or password!";
     }

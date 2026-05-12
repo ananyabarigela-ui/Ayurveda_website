@@ -13,6 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
@@ -20,9 +21,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
 
-<div class="container">
+<div class="container-fluid px-4">
 
-<a class="navbar-brand" href="index.php"> 🪴AyurQuest</a>
+<a class="navbar-brand" href="index.php">🪴AyurQuest</a>
 
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
 <span class="navbar-toggler-icon"></span>
@@ -37,7 +38,7 @@ if (session_status() === PHP_SESSION_NONE) {
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="diseases.php">Diseases</a>
+<a class="nav-link" href="about.php">About</a>
 </li>
 
 <?php if(isset($_SESSION['user'])){ ?>

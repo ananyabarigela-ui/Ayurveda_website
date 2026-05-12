@@ -9,6 +9,7 @@ padding:0;
 
 /* ===== NAVBAR ===== */
 
+/* Navbar background */
 .navbar{
 box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
@@ -24,6 +25,12 @@ font-weight:500;
 
 .nav-link:hover{
 color:#dcedc8 !important;
+}
+/* FIX NAVBAR WHITE BOX */
+.navbar .container {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 /* ===== HERO SECTION (YOUR EXISTING BANNER) ===== */
@@ -132,12 +139,27 @@ color:#2e7d32;
 width:100%;
 margin-top:15px;
 }
+/* ======.disease-details conatiner ====== */
+/* MAIN CONTENT BOX */
+.content-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
 /* ===== IMAGES ===== */
 
 img{
 max-width:100%;
 border-radius:10px;
+}
+/* =======   herbal guide container======= */
+/* style.css */
+.outer-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== FOOTER ===== */

@@ -1,62 +1,121 @@
 <?php
 session_start();
+
 include 'includes/db.php';
 include 'includes/header.php';
 
+if (!isset($_SESSION['user'])) {
+
+    header("Location: login.php");
+    exit;
+}
+
 $email = $_SESSION['user'];
 
-$query = "SELECT * FROM users WHERE email='$email'";
-$result = mysqli_query($conn,$query);
-$user = mysqli_fetch_assoc($result);
+if (isset($_POST['confirm_delete'])) {
+
+    $stmt = $conn->prepare("DELETE FROM users WHERE email=?");
+
+    $stmt->bind_param("s", $email);
+
+    $stmt->execute();
+
+    $stmt->close();
+
+    session_destroy();
+
+    header("Location: register.php?msg=account_deleted");
+
+    exit;
+}
 ?>
 
-<div class="container mt-5">
+<style>
 
-<div class="row justify-content-center">
+/* Full page layout */
+.delete-page{
 
-<div class="col-md-6">
+    min-height: 100vh;
 
-<div class="card p-4">
+    background: #eef3e8;
 
-<h3 class="text-center mb-4">My Profile</h3>
+    display: flex;
 
-<div class="text-center mb-3">
+    justify-content: center;
 
-<?php if($user['profile_pic']!=""){ ?>
+    align-items: center;
 
-<img src="uploads/<?php echo $user['profile_pic']; ?>" width="120" style="border-radius:50%;">
+    padding: 40px 15px;
+}
 
-<?php } else { ?>
+/* Card styling */
+.delete-card{
 
-<img src="images/default.png" width="120" style="border-radius:50%;">
+    width: 100%;
 
-<?php } ?>
+    max-width: 500px;
 
-</div>
+    background: #ffffff;
 
-<p><b>Name:</b> <?php echo $user['name']; ?></p>
+    border-radius: 15px;
 
-<p><b>Email:</b> <?php echo $user['email']; ?></p>
+    padding: 35px;
 
-<p><b>Alternate Email:</b> <?php echo $user['alternate_email']; ?></p>
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 
-<hr>
+    text-align: center;
+}
 
-<a href="change_password.php" class="btn btn-warning w-100 mb-2">
-Change Password
-</a>
+/* Heading */
+.delete-title{
 
-<a href="logout.php" class="btn btn-secondary w-100 mb-2">
-Logout
-</a>
+    color: #dc3545;
 
-<a href="delete_account.php" class="btn btn-danger w-100">
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+</style>
+
+<div class="delete-page">
+
+<div class="delete-card">
+
+<h2 class="delete-title">
+
 Delete Account
+
+</h2>
+
+<p class="mb-4">
+
+Are you sure you want to delete your account?
+
+<br>
+
+<strong>This action cannot be undone.</strong>
+
+</p>
+
+<form method="POST">
+
+<button type="submit"
+        name="confirm_delete"
+        class="btn btn-danger w-100 mb-2">
+
+Yes, Delete My Account
+
+</button>
+
+</form>
+
+<a href="profile.php"
+   class="btn btn-secondary w-100">
+
+Cancel
+
 </a>
-
-</div>
-
-</div>
 
 </div>
 

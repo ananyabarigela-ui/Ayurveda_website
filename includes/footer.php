@@ -1,7 +1,5 @@
-<footer class="bg-success text-white text-center p-3 mt-5">
-
-<p>© 2026 Ayurvedic Healing | Natural Medicine</p>
-
+<footer class="mt-0 py-3 text-center" style="background-color: #2d6a4f; color: white; margin-top: 0 !important;">
+    © 2026 Ayurvedic Healing | Natural Medicine
 </footer>
 
 </body>
